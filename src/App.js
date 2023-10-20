@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
 
-function App() {
+async function listPrinters() {
+  const devices = await navigator.mediaDevices.enumerateDevices();
+  const printers = devices.filter((device) => device.kind === "printer");
+
+  return printers;
+}
+
+const xml = `
+  <?xml version="1.0" encoding="UTF-8"?>
+  <document>
+    <text-line>hello world</text-line>
+  </document>
+`;
+
+const App = () => {
+  const [availablePrinters, setAvailablePrinters] = useState([]);
+  const [selectedPrinter, setSelectedPrinter] = useState();
+  const handlePrinterSelection = (event) => {
+    const selectedPrinterId = event.target.value;
+    setSelectedPrinter(
+      availablePrinters.find(
+        (printer) => printer.deviceId === selectedPrinterId
+      )
+    );
+    // Store the selected printer ID in your React state or a variable.
+  };
+
+  console.log(selectedPrinter);
+
+  useEffect(() => {
+    listPrinters().then((printerlist) => {
+      setAvailablePrinters(printerlist);
+      console.log(printerlist);
+    });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <select>
+        {availablePrinters.length === 0 && (
+          <option value="No Printer Available" onClick={handlePrinterSelection}>
+            No Printer Available
+          </option>
+        )}
+        {availablePrinters.map((printer) => (
+          <option
+            key={printer.deviceId}
+            value={printer.deviceId}
+            onClick={handlePrinterSelection}
+          >
+            {printer.label}
+          </option>
+        ))}
+      </select>
     </div>
   );
-}
+};
 
 export default App;
