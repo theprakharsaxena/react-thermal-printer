@@ -27,7 +27,7 @@ const App = () => {
     // Store the selected printer ID in your React state or a variable.
   };
 
-  console.log(selectedPrinter);
+  console.log(selectedPrinter,xml);
 
   useEffect(() => {
     listPrinters().then((printerlist) => {
