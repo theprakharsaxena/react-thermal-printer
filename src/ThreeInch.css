@@ -1,0 +1,47 @@
+* {
+  font-size: 12px;
+  font-family: "Times New Roman";
+}
+
+td,
+th,
+tr,
+table {
+  border-top: 1px solid black;
+  border-collapse: collapse;
+}
+
+td.description3,
+th.description3 {
+  width: 1.5in;
+  max-width: 1.5in;
+}
+
+td.quantity3,
+th.quantity3 {
+  width: 0.75in;
+  max-width: 0.75in;
+  word-break: break-all;
+}
+
+td.price3,
+th.price3 {
+  width: 0.75in;
+  max-width: 0.75in;
+  word-break: break-all;
+}
+
+.centered {
+  text-align: center;
+  align-content: center;
+}
+
+.ticket3 {
+  width: 3in;
+  max-width: 3in;
+}
+
+img {
+  max-width: inherit;
+  width: inherit;
+}

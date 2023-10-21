@@ -1,0 +1,61 @@
+/* body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+* {
+  font-size: 12px;
+  font-family: "Times New Roman";
+}
+
+td,
+th,
+tr,
+table {
+  border-top: 1px solid black;
+  border-collapse: collapse;
+}
+
+td.description,
+th.description {
+  width: 0.8in;
+  max-width: 0.8in;
+}
+
+td.quantity,
+th.quantity {
+  width: 0.6in;
+  max-width: 0.6in;
+  word-break: break-all;
+}
+
+td.price,
+th.price {
+  width: 0.6in;
+  max-width: 0.6in;
+  word-break: break-all;
+}
+
+.centered {
+  text-align: center;
+  align-content: center;
+}
+
+.ticket {
+  width: 2in;
+  max-width: 2in;
+}
+
+img {
+  max-width: inherit;
+  width: inherit;
+}
