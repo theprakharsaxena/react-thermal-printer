@@ -11,7 +11,7 @@ const ThreeInch = () => {
   return (
     <div style={{ padding: "1rem" }}>
       <div ref={(el) => (pdfRef = el)} class="ticket3">
-        <img src="./logo.png" alt="Logo" />
+      <h1>Saket Enterprises</h1>
         <p class="centered">
           Bill
           <br />
