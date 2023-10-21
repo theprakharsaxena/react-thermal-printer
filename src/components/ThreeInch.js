@@ -86,7 +86,7 @@ const ThreeInch = () => {
           stockregister.in
         </p>
       </div>
-      <button onClick={() => print()}>Print 3 inch Bill</button>
+      <button onClick={() => print()}>Print 3inch (76.2mm) Bill</button>
     </div>
   );
 };
